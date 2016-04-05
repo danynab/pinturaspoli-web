@@ -1,7 +1,13 @@
 var map;
-var loaded = false;
+var imagesLoaded = false;
+var mapLoaded = false;
+var mapReady = false;
 
 function initMap() {
+    mapReady = true;
+}
+
+function loadMap() {
     var myLatLng = {
         lat: 43.393762,
         lng: -5.658392
@@ -32,8 +38,8 @@ function setImagesToPortfolio() {
 }
 
 function toogleMenu() {
-  $("nav div.menu span").toggleClass("click");
-  $("nav ul").toggleClass("visible");
+    $("nav div.menu span").toggleClass("click");
+    $("nav ul").toggleClass("visible");
 }
 
 $(function() {
@@ -48,10 +54,14 @@ $(function() {
     });
 
     $(window).scroll(function() {
-      if (!loaded && ($(window).scrollTop() * 2 > $("#about").offset().top)) {
-        loaded = true;
-        setImagesToPortfolio();
-      }
+        if (!imagesLoaded && ($(window).scrollTop() * 2 > $("#portfolio").offset().top)) {
+            imagesLoaded = true;
+            setImagesToPortfolio();
+        }
+        if (mapReady && !mapLoaded && ($(window).scrollTop() * 2 > $("#contact").offset().top)) {
+            mapLoaded = true;
+            loadMap();
+        }
         if (map != undefined) {
             map.setOptions({
                 scrollwheel: false
@@ -66,8 +76,8 @@ $(function() {
     });
 
     $(".menu").click(function(e) {
-      e.preventDefault();
-      toogleMenu();
+        e.preventDefault();
+        toogleMenu();
     })
 
 });
