@@ -1,4 +1,5 @@
 var map;
+var loaded = false;
 
 function initMap() {
     var myLatLng = {
@@ -47,6 +48,10 @@ $(function() {
     });
 
     $(window).scroll(function() {
+      if (!loaded && ($(window).scrollTop() * 2 > $("#about").offset().top)) {
+        loaded = true;
+        setImagesToPortfolio();
+      }
         if (map != undefined) {
             map.setOptions({
                 scrollwheel: false
@@ -65,5 +70,4 @@ $(function() {
       toogleMenu();
     })
 
-    setImagesToPortfolio();
 });
