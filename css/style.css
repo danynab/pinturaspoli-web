@@ -238,9 +238,15 @@ section#contact form .form-group label {
     display: block;
     margin-bottom: 5px;
 }
+section#contact article.address .company p {
+  margin: 0;
+}
 section#contact article.address .company {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+section#contact article.address .company img {
+    height: 64px;
 }
 section#contact article.address h4 {
     margin-bottom: 10px;

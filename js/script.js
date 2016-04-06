@@ -51,6 +51,9 @@ $(function() {
         $("html, body").stop().animate({
             scrollTop: $(target.attr("href")).offset().top - 64
         }, 1000);
+
+        $("nav div.menu span").removeClass("click");
+        $("nav ul").removeClass("visible");
     });
 
     $(window).scroll(function() {

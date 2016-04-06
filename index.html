@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,28 +97,31 @@
             </div>
             <div id="map"></div>
             <div class="data">
-                <article class="address">
+                <article class="address" itemscope itemtype="http://schema.org/LocalBusiness">
                     <h3>Datos de contacto</h3>
                     <div class="company">
-                        <p>Pintor y Decorador POLI</p>
+                        <p itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><img src="img/logo_full.png" alt="Pintor y Decorador POLI" itemprop="contentUrl" /></p>
+                        <p><span itemprop="legalName">Pintor y Decorador POLI</span>
+                        </p>
                     </div>
-                    <div class="street">
+                    <div class="street" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                         <h4>Dirección</h4>
-                        <p><i class="fa fa-map fa-lg fa-fw"></i> C/ Ángel Embil, 1 Bajo</p>
-                        <p>33510 Pola de Siero (Asturias)</p>
+                        <p><i class="fa fa-map fa-lg fa-fw"></i> <span itemprop="streetAddress">C/ Ángel Embil, 1 Bajo</span></p>
+                        <p><span itemprop="postalCode">33510</span> <span itemprop="addressLocality">Pola de Siero</span> (<span itemprop="addressRegion">Asturias</span>)</p>
+
                     </div>
                     <div class="phone">
                         <h4>Teléfonos</h4>
-                        <p><i class="fa fa-phone fa-lg fa-fw"></i> (+34) 985 720 492</p>
-                        <p><i class="fa fa-mobile fa-lg fa-fw"></i> (+34) 639 914 748</p>
+                        <p><i class="fa fa-phone fa-lg fa-fw"></i> <span itemprop="telephone">(+34) 985 720 492</span></p>
+                        <p><i class="fa fa-mobile fa-lg fa-fw"></i> <span itemprop="telephone">(+34) 639 914 748</span></p>
                     </div>
                     <div class="fax">
                         <h4>Fax</h4>
-                        <p><i class="fa fa-fax fa-lg fa-fw"></i> (+34) 985 720 492</p>
+                        <p><i class="fa fa-fax fa-lg fa-fw"></i> <span itemprop="faxNumber">(+34) 985 720 492</span></p>
                     </div>
                     <div class="email">
                         <h4>Email</h4>
-                        <p><i class="fa fa-envelope fa-lg fa-fw"></i> <a href="mailto:poli@pinturaspoli.es">poli@pinturaspoli.es</a></p>
+                        <p><i class="fa fa-envelope fa-lg fa-fw"></i> <a href="mailto:poli@pinturaspoli.es"><span itemprop="email">poli@pinturaspoli.es</span></a></p>
                     </div>
                 </article>
                 <article class="form">
@@ -154,7 +158,7 @@
             </script>, <a href="http://danimeana.com/">Daniel Meana</a></p>
     </footer>
 
-    <!--Version jQuery 1.11.3 -->
+    <!--Version jQuery 1.12.2 -->
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnAHJuL1t_mI0-AetfHYcbblvX391p2mI&callback=initMap">
