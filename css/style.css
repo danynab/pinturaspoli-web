@@ -243,16 +243,17 @@ section#contact article.address .company p {
 }
 section#contact article.address .company {
     font-size: 1em;
-    text-align: center;
+    margin-top: 2em;
+    text-align: left;
 }
 section#contact article.address .company img {
     height: 64px;
 }
 section#contact article.address h4 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 section#contact article.address div:not(.company) p {
-    margin: 5px 10px;
+    margin: 5px;
 }
 section#contact article.address i {
     color: #080c7e;
