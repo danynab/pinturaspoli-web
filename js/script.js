@@ -57,7 +57,6 @@ function loadGallery(name, title) {
             img: file
         });
     }
-    console.log(imagesArray);
     fotorama.load(imagesArray);
 }
 
