@@ -164,7 +164,8 @@ function onFormClick(event) {
             nombre: $("input#name").val(),
             email: $("input#email").val(),
             telefono: $("input#phone").val(),
-            texto: $("textarea#comments").val()
+            texto: $("textarea#comments").val(),
+            _subject: "Contacto desde pinturaspoli.es"
         };
         onDoneComment();
         $.post("https://formspree.io/poli@pinturaspoli.es", data, "json").done(onDoneComment);
