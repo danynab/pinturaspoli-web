@@ -166,8 +166,27 @@ function onFormClick(event) {
             telefono: $("input#phone").val(),
             texto: $("textarea#comments").val()
         };
-        $.post("https://formspree.io/poli@pinturaspoli.es", data, "json").done(alert("Gracias por contactar con nosostros."));
+        onDoneComment();
+        $.post("https://formspree.io/poli@pinturaspoli.es", data, "json").done(onDoneComment);
     }
+}
+
+function onDoneComment() {
+  $("div.sent").removeClass("hidden");
+  $("form").addClass("overlap");
+}
+
+function resetForm() {
+  $("input#name").val("");
+  $("input#email").val("");
+  $("input#phone").val("");
+  $("textarea#comments").val("");
+  grecaptcha.reset();
+  var sendButton = $("input[type=submit]");
+  sendButton.addClass("disabled");
+  sendButton.prop("disabled", true);
+  $("div.sent").addClass("hidden");
+  $("form").removeClass("overlap");
 }
 
 function onCorrectCaptcha(response) {
@@ -235,4 +254,6 @@ $(function() {
 
     $("form input, form textarea").on("input", checkSubmitVisibility);
     $("form input, form textarea").blur(checkField);
+
+    $(".sent button").click(resetForm);
 });
