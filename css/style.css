@@ -401,8 +401,6 @@ footer img {
     nav ul li a:hover {
         text-decoration: underline;
     }
-}
-@media screen and (min-width: 480px) {
     section#contact article.address {
         display: block;
         float: left;
@@ -413,6 +411,9 @@ footer img {
         overflow: hidden;
         width: 50%;
     }
+}
+@media screen and (min-width: 480px) {
+
 }
 @media screen and (max-width: 599px) {
     nav div.content {
