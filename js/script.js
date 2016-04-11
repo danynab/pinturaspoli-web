@@ -170,7 +170,7 @@ function onFormClick(event) {
     }
 }
 
-function onCorrectCaptcha(g-recaptcha-response) {
+function onCorrectCaptcha(response) {
   checkSubmitVisibility();
 }
 
