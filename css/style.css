@@ -70,15 +70,15 @@ nav div.menu {
     cursor: pointer;
     float: right;
     margin-right: 20px;
-    margin-top: 17px;
+    margin-top: 20px;
     position: relative;
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 24px;
 }
 nav div.menu span {
     position: absolute;
     left: 0;
-    border-top: 4px solid #080c7e;
+    border-top: 3px solid #080c7e;
     width: 100%;
     transition: 0.5s;
 }
@@ -86,13 +86,13 @@ nav div.menu span.top {
     top: 0;
 }
 nav div.menu span.middle {
-    top: 13px;
+    top: 10px;
 }
 nav div.menu span.bottom {
-    top: 26px;
+    top: 20px;
 }
 nav div.menu span.click.top {
-    top: 13px;
+    top: 10px;
     transform: rotate(45deg);
     transition: 0.5s 0.1s;
 }
@@ -100,7 +100,7 @@ nav div.menu span.click.middle {
     opacity: 0;
 }
 nav div.menu span.click.bottom {
-    top: 13px;
+    top: 10px;
     transform: rotate(-405deg);
     transition: 0.5s 0.1s;
 }
@@ -290,6 +290,9 @@ section#contact article.address a:hover {
     color: #080c7e;
     text-decoration: underline;
 }
+section#contact article.address .networks img {
+  height: 32px;
+}
 .modal-open {
     overflow: hidden;
 }
@@ -358,6 +361,9 @@ footer a {
 }
 footer a:hover {
     text-decoration: underline;
+}
+footer img {
+  height: 32px;
 }
 @media screen and (min-width: 801px) {
     section#about {
