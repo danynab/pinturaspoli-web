@@ -209,7 +209,7 @@ section#contact div.data h3 {
     text-align: center;
 }
 section#contact form .form-group {
-    margin: 15px;
+    margin: 15px 0;
 }
 section#contact form .form-group input, section#contact form .form-group textarea {
     padding: 3%;
@@ -226,6 +226,7 @@ section#contact form .form-group input[type="submit"] {
     color: white;
     margin: auto;
     transition: background-color 0.25s ease-in-out;
+    width: 100%;
 }
 section#contact form .form-group input[type="submit"]:hover {
     background-color: rgba(8, 12, 126, 0.7);
@@ -237,6 +238,26 @@ section#contact form .form-group input[type="submit"]:active {
 section#contact form .form-group label {
     display: block;
     margin-bottom: 5px;
+}
+section#contact form .form-group p {
+    color: red;
+    display: none;
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+section#contact form .form-group.error p {
+    display: block;
+}
+section#contact form .form-group p.hidden {
+    display: none;
+}
+section#contact form .form-group.error input, section#contact form .form-group.error textarea {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.05);
+}
+section#contact form input[type=submit].disabled {
+    pointer-events: none;
+    background-color: rgba(8, 12, 126, 0.1);
 }
 section#contact article.address .company p {
     margin: 0;

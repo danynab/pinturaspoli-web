@@ -78,6 +78,96 @@ function toogleMenu() {
     $("nav ul").toggleClass("visible");
 }
 
+function checkEmptyField(field) {
+    var text = $(field).val();
+    if (text.length == 0) {
+        $(field).parent(".form-group").addClass("error");
+        return false;
+    } else  {
+        $(field).parent(".form-group").removeClass("error");
+        return true;
+    }
+}
+
+function validateEmailField(field) {
+    var email = $(field).val();
+    var parent = $(field).parent(".form-group");
+    parent.find("p.error").removeClass("hidden");
+    parent.find("p.error-email").addClass("hidden");
+    if (checkEmptyField(field)) {
+        var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        if (re.test(email)) {
+            return true;
+        } else {
+            parent.addClass("error");
+            parent.find("p.error").addClass("hidden");
+            parent.find("p.error-email").removeClass("hidden");
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+function checkField() {
+    var field = $(this);
+    if (field.attr("name") == "email") {
+        validateEmailField(field);
+    } else {
+        checkEmptyField(field);
+    }
+}
+
+function checkAllFields() {
+    var nameField = $("input#name");
+    var emailField = $("input#email");
+    var phoneField = $("input#phone");
+    var commentsField = $("textarea#comments");
+    var nameValid = checkEmptyField(nameField);
+    var emailValid = validateEmailField(emailField);
+    var phoneValid = checkEmptyField(phoneField);
+    var commentsValid = checkEmptyField(commentsField);
+    return nameValid && emailValid && phoneValid && commentsValid;
+}
+
+function validateEmail(email) {
+    var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if (re.test(email)) {
+        return true;
+    } else {
+
+        return false;
+    }
+}
+
+function checkSubmitVisibility() {
+    var name = $("input#name").val();
+    var email = $("input#email").val();
+    var phone = $("input#phone").val();
+    var comments = $("textarea#comments").val();
+    var sendButton = $("input[type=submit]");
+    if (name.length > 0 && email.length > 0 && phone.length > 0 && comments.length > 0 && validateEmail(email)) {
+        sendButton.removeClass("disabled");
+        sendButton.prop("disabled", false);
+    } else  {
+        sendButton.addClass("disabled");
+        sendButton.prop("disabled", true);
+    }
+}
+
+function onFormClick(event) {
+    event.preventDefault();
+    if (checkAllFields()) {
+        var data = {
+            nombre: $("input#name").val(),
+            email: $("input#email").val(),
+            telefono: $("input#phone").val(),
+            texto: $("textarea#comments").val()
+        };
+        $.post("https://formspree.io/poli@pinturaspoli.es", data, "json").done(alert("Gracias por contactar con nosostros."));
+    }
+}
+
 $(function() {
     $("nav a.option").click(function(e) {
         e.preventDefault();
@@ -134,4 +224,9 @@ $(function() {
         e.preventDefault();
         $("body").addClass("modal-open");
     });
+
+    $(".form form").submit(onFormClick);
+
+    $("form input, form textarea").on("input", checkSubmitVisibility);
+    $("form input, form textarea").blur(checkField);
 });

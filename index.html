@@ -25,7 +25,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/normalize.css" rel="stylesheet" />
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <!-- 3 KB -->
     <link href="css/style.css" rel="stylesheet" />
 </head>
 
@@ -140,25 +141,30 @@
                 </article>
                 <article class="form">
                     <h3>Formulario de contacto</h3>
-                    <form>
+                    <form action="https://formspree.io/poli@pinturaspoli.es" method="POST">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" type="text" placeholder="Escribe aquí tu nombre" />
+                            <input id="name" type="text" name="name" placeholder="Escribe aquí tu nombre" />
+                            <p class="error">El nombre no puede estar vacío.</p>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input id="email" type="email" placeholder="Escribe aquí tu email" />
+                            <input id="email" type="text" name="email" placeholder="Escribe aquí tu email" />
+                            <p class="error">El email no puede estar vacío.</p>
+                            <p class="error-email hidden">El email no es correcto.</p>
                         </div>
                         <div class="form-group">
                             <label for="phone">Teléfono:</label>
-                            <input id="phone" type="tel" placeholder="Escribe aquí tu télefono" />
+                            <input id="phone" type="tel" name="phone" placeholder="Escribe aquí tu télefono" />
+                            <p class="error">El teléfono no puede estar vacío.</p>
                         </div>
                         <div class="form-group">
                             <label for="comments">Comentarios:</label>
-                            <textarea id="comments" rows="4"></textarea>
+                            <textarea id="comments" name="comments" rows="4"></textarea>
+                            <p class="error">El campo de comentarios no puede estar vacio.</p>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Enviar" />
+                            <input class="disabled" type="submit" value="Enviar" disabled/>
                         </div>
                     </form>
                 </article>
@@ -174,7 +180,7 @@
             </script>, <a href="http://danimeana.com/">Daniel Meana</a></p>
     </footer>
 
-    <div class="gallery" style="display: none;">
+    <div class="gallery">
         <span class="close"><i class="fa fa-times"></i></span>
         <div class="work">
             <p class="title"></p>
@@ -187,7 +193,8 @@
 
     <!--Version jQuery 1.12.2 -->
     <script src="js/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <!-- 16 KB -->
     <script src="js/script.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnAHJuL1t_mI0-AetfHYcbblvX391p2mI&callback=initMap">
     </script>
