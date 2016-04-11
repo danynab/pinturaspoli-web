@@ -259,6 +259,9 @@ section#contact form input[type=submit].disabled {
     pointer-events: none;
     background-color: rgba(8, 12, 126, 0.1);
 }
+section#contact form .form-group .g-recaptcha div {
+  margin: auto;
+}
 section#contact article.address .company p {
     margin: 0;
 }

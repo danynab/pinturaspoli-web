@@ -127,7 +127,8 @@ function checkAllFields() {
     var emailValid = validateEmailField(emailField);
     var phoneValid = checkEmptyField(phoneField);
     var commentsValid = checkEmptyField(commentsField);
-    return nameValid && emailValid && phoneValid && commentsValid;
+    var captchaValid = grecaptcha.getResponse().length != 0;
+    return nameValid && emailValid && phoneValid && commentsValid && captchaValid;
 }
 
 function validateEmail(email) {
@@ -146,7 +147,8 @@ function checkSubmitVisibility() {
     var phone = $("input#phone").val();
     var comments = $("textarea#comments").val();
     var sendButton = $("input[type=submit]");
-    if (name.length > 0 && email.length > 0 && phone.length > 0 && comments.length > 0 && validateEmail(email)) {
+    var captchaValid = grecaptcha.getResponse().length != 0;
+    if (captchaValid && name.length > 0 && email.length > 0 && phone.length > 0 && comments.length > 0 && validateEmail(email)) {
         sendButton.removeClass("disabled");
         sendButton.prop("disabled", false);
     } else  {
@@ -166,6 +168,10 @@ function onFormClick(event) {
         };
         $.post("https://formspree.io/poli@pinturaspoli.es", data, "json").done(alert("Gracias por contactar con nosostros."));
     }
+}
+
+function onCorrectCaptcha(g-recaptcha-response) {
+  checkSubmitVisibility();
 }
 
 $(function() {

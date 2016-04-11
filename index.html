@@ -164,6 +164,9 @@
                             <p class="error">El campo de comentarios no puede estar vacio.</p>
                         </div>
                         <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LfxJB0TAAAAAFQquXq1ZsTRQiEliwAodq3QMb7w" data-callback="onCorrectCaptcha"></div>
+                        </div>
+                        <div class="form-group">
                             <input class="disabled" type="submit" value="Enviar" disabled/>
                         </div>
                     </form>
@@ -195,10 +198,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <!-- 16 KB -->
-    <script src="js/script.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnAHJuL1t_mI0-AetfHYcbblvX391p2mI&callback=initMap">
     </script>
     <script src="js/parallax.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
