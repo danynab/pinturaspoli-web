@@ -17,6 +17,7 @@ var imagesLoaded = false;
 var mapLoaded = false;
 var mapReady = false;
 
+
 function initMap() {
     mapReady = true;
 }
@@ -173,25 +174,25 @@ function onFormClick(event) {
 }
 
 function onDoneComment() {
-  $("div.sent").removeClass("hidden");
-  $("form").addClass("overlap");
+    $("div.sent").removeClass("hidden");
+    $("form").addClass("overlap");
 }
 
 function resetForm() {
-  $("input#name").val("");
-  $("input#email").val("");
-  $("input#phone").val("");
-  $("textarea#comments").val("");
-  grecaptcha.reset();
-  var sendButton = $("input[type=submit]");
-  sendButton.addClass("disabled");
-  sendButton.prop("disabled", true);
-  $("div.sent").addClass("hidden");
-  $("form").removeClass("overlap");
+    $("input#name").val("");
+    $("input#email").val("");
+    $("input#phone").val("");
+    $("textarea#comments").val("");
+    grecaptcha.reset();
+    var sendButton = $("input[type=submit]");
+    sendButton.addClass("disabled");
+    sendButton.prop("disabled", true);
+    $("div.sent").addClass("hidden");
+    $("form").removeClass("overlap");
 }
 
 function onCorrectCaptcha(response) {
-  checkSubmitVisibility();
+    checkSubmitVisibility();
 }
 
 $(function() {
@@ -217,7 +218,7 @@ $(function() {
             mapLoaded = true;
             loadMap();
         }
-        if (map != undefined) {
+        if (mapLoaded) {
             map.setOptions({
                 scrollwheel: false
             });
