@@ -52,6 +52,7 @@ header div.header-center div.text {
 }
 header div.text img {
     width: 300px;
+    max-width: 90%;
 }
 header div.text p {
     margin: 0;
@@ -491,5 +492,12 @@ footer img {
     nav ul li a:hover {
         color: white;
         background-color: #080c7e;
+    }
+}
+@media screen and (max-width: 329px) {
+    header div.header-center div.text {
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
     }
 }
