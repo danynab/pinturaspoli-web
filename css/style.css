@@ -17,8 +17,11 @@ h2 {
     text-align: center;
     text-transform: uppercase;
 }
-header div.parallax-window {
+header div.parallax-window, body.error {
     min-height: 100vh;
+}
+body.error main {
+  background-color: #080c7e;
 }
 header h1 {
     display: none;
