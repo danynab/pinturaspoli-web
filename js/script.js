@@ -196,6 +196,8 @@ function onCorrectCaptcha(response) {
 }
 
 $(function() {
+    $("div.head").css("min-height", $("div.head").height());
+
     $("nav a.option").click(function(e) {
         e.preventDefault();
 
