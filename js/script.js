@@ -26,7 +26,7 @@ function loadMap() {
     var myLatLng = {
         lat: 43.393762,
         lng: -5.658392
-    }
+    };
     map = new google.maps.Map(document.getElementById("map"), {
         center: myLatLng,
         zoom: 16,
@@ -81,7 +81,7 @@ function toogleMenu() {
 
 function checkEmptyField(field) {
     var text = $(field).val();
-    if (text.length == 0) {
+    if (text.length === 0) {
         $(field).parent(".form-group").addClass("error");
         return false;
     } else  {
@@ -128,7 +128,7 @@ function checkAllFields() {
     var emailValid = validateEmailField(emailField);
     var phoneValid = checkEmptyField(phoneField);
     var commentsValid = checkEmptyField(commentsField);
-    var captchaValid = grecaptcha.getResponse().length != 0;
+    var captchaValid = grecaptcha.getResponse().length !== 0;
     return nameValid && emailValid && phoneValid && commentsValid && captchaValid;
 }
 
@@ -148,7 +148,7 @@ function checkSubmitVisibility() {
     var phone = $("input#phone").val();
     var comments = $("textarea#comments").val();
     var sendButton = $("input[type=submit]");
-    var captchaValid = grecaptcha.getResponse().length != 0;
+    var captchaValid = grecaptcha.getResponse().length !== 0;
     if (captchaValid && name.length > 0 && email.length > 0 && phone.length > 0 && comments.length > 0 && validateEmail(email)) {
         sendButton.removeClass("disabled");
         sendButton.prop("disabled", false);
@@ -225,7 +225,7 @@ $(function() {
                 scrollwheel: false
             });
         }
-    })
+    });
 
     $("#map").click(function(e) {
         map.setOptions({
