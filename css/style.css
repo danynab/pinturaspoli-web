@@ -17,8 +17,14 @@ h2 {
     text-align: center;
     text-transform: uppercase;
 }
-header div.parallax-window {
+header div.parallax-window, body.error {
     min-height: 100vh;
+}
+body.error main {
+    background-color: #080c7e;
+}
+header {
+    position: relative;
 }
 header h1 {
     display: none;
@@ -30,19 +36,27 @@ header p.slogan {
     text-transform: uppercase;
     text-align: center;
 }
-header div.text {
+header div.header-center {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+}
+header div.header-center div.text {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 0 10px #080c7e;
     color: #080c7e;
     display: table;
     margin: auto;
-    padding: 20px;
-    position: relative;
-    top: 25vh;
+    padding: 15px;
 }
 header div.text img {
     width: 300px;
+    max-width: 90%;
+}
+header div.text p {
+    margin: 0;
+    margin-top: 10px;
 }
 header {
     text-align: center;
@@ -70,15 +84,15 @@ nav div.menu {
     cursor: pointer;
     float: right;
     margin-right: 20px;
-    margin-top: 17px;
+    margin-top: 20px;
     position: relative;
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 24px;
 }
 nav div.menu span {
     position: absolute;
     left: 0;
-    border-top: 4px solid #080c7e;
+    border-top: 3px solid #080c7e;
     width: 100%;
     transition: 0.5s;
 }
@@ -86,13 +100,13 @@ nav div.menu span.top {
     top: 0;
 }
 nav div.menu span.middle {
-    top: 13px;
+    top: 10px;
 }
 nav div.menu span.bottom {
-    top: 26px;
+    top: 20px;
 }
 nav div.menu span.click.top {
-    top: 13px;
+    top: 10px;
     transform: rotate(45deg);
     transition: 0.5s 0.1s;
 }
@@ -100,7 +114,7 @@ nav div.menu span.click.middle {
     opacity: 0;
 }
 nav div.menu span.click.bottom {
-    top: 13px;
+    top: 10px;
     transform: rotate(-405deg);
     transition: 0.5s 0.1s;
 }
@@ -209,7 +223,7 @@ section#contact div.data h3 {
     text-align: center;
 }
 section#contact form .form-group {
-    margin: 15px;
+    margin: 15px 0;
 }
 section#contact form .form-group input, section#contact form .form-group textarea {
     padding: 3%;
@@ -226,6 +240,7 @@ section#contact form .form-group input[type="submit"] {
     color: white;
     margin: auto;
     transition: background-color 0.25s ease-in-out;
+    width: 100%;
 }
 section#contact form .form-group input[type="submit"]:hover {
     background-color: rgba(8, 12, 126, 0.7);
@@ -237,6 +252,64 @@ section#contact form .form-group input[type="submit"]:active {
 section#contact form .form-group label {
     display: block;
     margin-bottom: 5px;
+}
+section#contact form .form-group p {
+    color: red;
+    display: none;
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+section#contact form .form-group.error p {
+    display: block;
+}
+section#contact form .form-group.error input, section#contact form .form-group.error textarea {
+    border: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.05);
+}
+section#contact form input[type=submit].disabled {
+    pointer-events: none;
+    background-color: rgba(8, 12, 126, 0.1);
+}
+section#contact form .form-group .g-recaptcha div {
+    margin: auto;
+}
+section#contact article.form {
+    position: relative;
+}
+section#contact article.form form.overlap {
+    pointer-events: none;
+}
+section#contact .sent {
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+section#contact .sent p {
+    font-size: 3em;
+    text-align: center;
+}
+section#contact .sent p i {
+    color: #080c7e;
+}
+section#contact .sent button {
+    display: block;
+    margin: auto;
+    background-color: #080c7e;
+    color: white;
+    transition: background-color 0.25s ease-in-out;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+section#contact .sent button:hover {
+    background-color: rgba(8, 12, 126, 0.7);
+}
+section#contact .sent button:active {
+    background-color: rgba(8, 12, 126, 0.3);
+    transition: background-color 0s ease-in-out;
 }
 section#contact article.address .company p {
     margin: 0;
@@ -265,6 +338,9 @@ section#contact article.address a {
 section#contact article.address a:hover {
     color: #080c7e;
     text-decoration: underline;
+}
+section#contact article.address .networks img {
+    height: 32px;
 }
 .modal-open {
     overflow: hidden;
@@ -335,6 +411,12 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+footer img {
+    height: 32px;
+}
+.hidden {
+    display: none !important;
+}
 @media screen and (min-width: 801px) {
     section#about {
         overflow: hidden;
@@ -371,8 +453,6 @@ footer a:hover {
     nav ul li a:hover {
         text-decoration: underline;
     }
-}
-@media screen and (min-width: 480px) {
     section#contact article.address {
         display: block;
         float: left;
@@ -412,5 +492,12 @@ footer a:hover {
     nav ul li a:hover {
         color: white;
         background-color: #080c7e;
+    }
+}
+@media screen and (max-width: 329px) {
+    header div.header-center div.text {
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
     }
 }
