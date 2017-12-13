@@ -222,95 +222,6 @@ section#contact div.data h3 {
     font-weight: normal;
     text-align: center;
 }
-section#contact form .form-group {
-    margin: 15px 0;
-}
-section#contact form .form-group input, section#contact form .form-group textarea {
-    padding: 3%;
-    width: 94%;
-}
-section#contact form .form-group input, section#contact form .form-group textarea {
-    display: block;
-    background-color: rgba(8, 12, 126, 0.05);
-    border: none;
-    border-radius: 5px;
-}
-section#contact form .form-group input[type="submit"] {
-    background-color: #080c7e;
-    color: white;
-    margin: auto;
-    transition: background-color 0.25s ease-in-out;
-    width: 100%;
-}
-section#contact form .form-group input[type="submit"]:hover {
-    background-color: rgba(8, 12, 126, 0.7);
-}
-section#contact form .form-group input[type="submit"]:active {
-    background-color: rgba(8, 12, 126, 0.3);
-    transition: background-color 0s ease-in-out;
-}
-section#contact form .form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-section#contact form .form-group p {
-    color: red;
-    display: none;
-    font-size: 0.7em;
-    margin-top: 5px;
-}
-section#contact form .form-group.error p {
-    display: block;
-}
-section#contact form .form-group.error input, section#contact form .form-group.error textarea {
-    border: 1px solid red;
-    background-color: rgba(255, 0, 0, 0.05);
-}
-section#contact form input[type=submit].disabled {
-    pointer-events: none;
-    background-color: rgba(8, 12, 126, 0.1);
-}
-section#contact form .form-group .g-recaptcha div {
-    margin: auto;
-}
-section#contact article.form {
-    position: relative;
-}
-section#contact article.form form.overlap {
-    pointer-events: none;
-}
-section#contact .sent {
-    background: rgba(255, 255, 255, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-section#contact .sent p {
-    font-size: 3em;
-    text-align: center;
-}
-section#contact .sent p i {
-    color: #080c7e;
-}
-section#contact .sent button {
-    display: block;
-    margin: auto;
-    background-color: #080c7e;
-    color: white;
-    transition: background-color 0.25s ease-in-out;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-}
-section#contact .sent button:hover {
-    background-color: rgba(8, 12, 126, 0.7);
-}
-section#contact .sent button:active {
-    background-color: rgba(8, 12, 126, 0.3);
-    transition: background-color 0s ease-in-out;
-}
 section#contact article.address .company p {
     margin: 0;
 }
@@ -339,8 +250,8 @@ section#contact article.address a:hover {
     color: #080c7e;
     text-decoration: underline;
 }
-section#contact article.address .networks img {
-    height: 32px;
+section#contact article.address .networks .fb img {
+    height: 55px;
 }
 .modal-open {
     overflow: hidden;
@@ -453,12 +364,12 @@ footer img {
     nav ul li a:hover {
         text-decoration: underline;
     }
-    section#contact article.address {
+    section#contact div.col-1 {
         display: block;
         float: left;
         width: 50%;
     }
-    section#contact article.form {
+    section#contact div.col-2 {
         display: block;
         overflow: hidden;
         width: 50%;
